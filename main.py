@@ -16,37 +16,56 @@ CS1430_MEETINGS_PER_SEMESTER = 45
 # ---- FUNCTIONS: replace each return 0 ----
 
 def cost_per_semester(annual_cost):
-    """Give back what one semester costs."""
-    return 0
+    
+    return round(annual_cost / SEMESTERS_PER_YEAR, 2)
 
 
 def cost_per_month(annual_cost):
     """Give back what one month of the academic year costs."""
-    return 0
+    return round(annual_cost / MONTHS_PER_YEAR, 2)
 
 
 def cost_per_day(annual_cost):
     """Give back what one class day costs."""
-    return 0
+    return round(annual_cost / SEMESTERS_PER_YEAR / CLASS_DAYS_PER_SEMESTER, 2)
 
 
 def cost_per_credit(annual_cost, credits):
-    """Give back what one credit costs. credits is the number taken this semester."""
-    return 0
+
+    return round(annual_cost / SEMESTERS_PER_YEAR / credits, 2)
 
 
 def cost_per_class(annual_cost, credits):
-    """Give back what one 50-minute CS 1430 class meeting costs."""
-    return 0
+    per_credit = annual_cost / SEMESTERS_PER_YEAR / credits
+    return round(per_credit * CS1430_CREDITS / CS1430_MEETINGS_PER_SEMESTER, 2)
 
 
-# ---- PROGRAM ----
+def ask_number(prompt):
+    while True:
+        try:
+            value = float(input(prompt))
+            if value < 0:
+                print("Please enter a positive number.")
+                continue
+            return value
+        except ValueError:
+            print("Yeah, that's not going to work. Please enter a POSITIVE number.")
+
+def menu():
+    print("Cost of College Menu")
+    print("1. Calculate cost per semester")
+    print("2. Calculate cost per month")
+    print("3. Calculate cost per day")
+    print("4. Calculate cost per credit")
+    print("5. Calculate cost per class")
+    print("Q. Quit")
 
 def main():
-    # Ask for the total cost for one year here.
-    # Then ask for the credits this semester.
+    annual_cost = ask_number("Enter the annual cost of college: ")
+    credits = ask_number("Enter the number of credits for the semester: ")
 
     while True:
+        menu()
         # Show your menu here.
 
         choice = input("Choose an option: ")
@@ -54,8 +73,18 @@ def main():
         if choice == "Q":
             break
 
-        # Add a branch for each menu option here.
-
+        elif choice == "1":
+            print(f"Cost per semester: ${cost_per_semester(annual_cost):.2f}")
+        elif choice == "2":
+            print(f"Cost per month: ${cost_per_month(annual_cost)}")
+        elif choice == "3":
+            print(f"Cost per day: ${cost_per_day(annual_cost):.2f}")
+        elif choice == "4":
+            print(f"Cost per credit: ${cost_per_credit(annual_cost, credits):.2f}")
+        elif choice == "5":
+            print(f"Cost per class: ${cost_per_class(annual_cost, credits)}")
+        else:
+            print("No, no. You have to choose 1-5 or Q.")
 
 # ---- LAUNCH: do not change ----
 if __name__ == "__main__":
