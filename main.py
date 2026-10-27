@@ -58,7 +58,29 @@ def menu():
     print("3. Calculate cost per day")
     print("4. Calculate cost per credit")
     print("5. Calculate cost per class")
+    print("6. Is CS 1430 worth it?")
     print("Q. Quit")
+
+
+def worth_it(annual_cost, credits):
+    per_class = cost_per_class(annual_cost, credits)
+    course_total = round(per_class * CS1430_MEETINGS_PER_SEMESTER, 2)
+
+    print()
+    print(" WORTH IT?")
+    print(f"A single CS 1430 meeting costs you ${per_class:,.2f}")
+    print(f"The whole course (45 meetings) costs ${course_total:,.2f}")
+
+    attended = ask_number(
+        "How many CS 1430 meetings have you attended so far? ")
+    spent = round(per_class * attended, 2)
+    print(f"Meetings attended: {attended:.0f}")
+    print(f"Money already spent on those meetings: ${spent:,.2f}")
+
+    if attended >= CS1430_MEETINGS_PER_SEMESTER / 2:
+        print("You've used more than half the meetings.")
+    else:
+        print("Plenty of meetings left.")
 
 def main():
     annual_cost = ask_number("Enter the annual cost of college: ")
@@ -83,8 +105,10 @@ def main():
             print(f"Cost per credit: ${cost_per_credit(annual_cost, credits):.2f}")
         elif choice == "5":
             print(f"Cost per class: ${cost_per_class(annual_cost, credits)}")
+        elif choice == "6":
+            worth_it(annual_cost, credits)
         else:
-            print("No, no. You have to choose 1-5 or Q.")
+            print("No, no. You have to choose 1-6 or Q.")
 
 # ---- LAUNCH: do not change ----
 if __name__ == "__main__":

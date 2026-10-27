@@ -8,7 +8,7 @@ Commit      : unknown
 Message     : 
 Author      : 
 Committed   : 
-Checked     : 2026-10-26 23:46:49 Central Daylight Time
+Checked     : 2026-10-27 01:28:05 Central Daylight Time
 Python      : 3.14.8
 
 ================================================================
@@ -36,9 +36,10 @@ CHECK RESULTS
 --- Git and GitHub (required for your points to count) ---
 [PASS] Git is installed
 [PASS] This folder is a Git repository
-[FAIL] You have committed your own work
-   > So far there is only the template's first commit.
-   > In Source Control, type a message and click Commit.
+[PASS] You have committed your own work
+[FAIL] Your latest changes are committed
+   > main.py has changes that are not committed yet.
+   > Save, then Commit in Source Control, so GitHub has what check.py tested.
 
 POINTS FROM check.py: 40 / 40
 
@@ -51,6 +52,7 @@ Enter the annual cost of college: Enter the number of credits for the semester: 
 3. Calculate cost per day
 4. Calculate cost per credit
 5. Calculate cost per class
+6. Is CS 1430 worth it?
 Q. Quit
 Choose an option: Cost per semester: $7300.50
 Cost of College Menu
@@ -59,6 +61,7 @@ Cost of College Menu
 3. Calculate cost per day
 4. Calculate cost per credit
 5. Calculate cost per class
+6. Is CS 1430 worth it?
 Q. Quit
 Choose an option: Cost per month: $1622.33
 Cost of College Menu
@@ -67,6 +70,7 @@ Cost of College Menu
 3. Calculate cost per day
 4. Calculate cost per credit
 5. Calculate cost per class
+6. Is CS 1430 worth it?
 Q. Quit
 Choose an option: Cost per day: $97.34
 Cost of College Menu
@@ -75,6 +79,7 @@ Cost of College Menu
 3. Calculate cost per day
 4. Calculate cost per credit
 5. Calculate cost per class
+6. Is CS 1430 worth it?
 Q. Quit
 Choose an option: Cost per credit: $486.70
 Cost of College Menu
@@ -83,6 +88,7 @@ Cost of College Menu
 3. Calculate cost per day
 4. Calculate cost per credit
 5. Calculate cost per class
+6. Is CS 1430 worth it?
 Q. Quit
 Choose an option: Cost per class: $32.45
 Cost of College Menu
@@ -91,5 +97,6 @@ Cost of College Menu
 3. Calculate cost per day
 4. Calculate cost per credit
 5. Calculate cost per class
+6. Is CS 1430 worth it?
 Q. Quit
 Choose an option:
